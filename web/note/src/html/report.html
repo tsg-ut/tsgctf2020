@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="/app.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <section class="section">
+                <article class="message">
+                    <div class="message-header">
+                        <p>Note</p>
+                    </div>
+                    <div class="message-body">
+                        <p>We have rate limiting to report (1 req/sec/IP). Do not try to use multiple IPs in order to avoid limiting.</p>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section">
+                <form action="/query" method="POST">
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <input name="url" class="input" placeholder="URL to report...">
+                        </div>
+                        <div class="control">
+                            <button type="submit" class="button is-primary">Report</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </body>
+</html>

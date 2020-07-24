@@ -1,0 +1,72 @@
+[
+    {
+        "id": "C04CYTT8X",
+        "name": "general",
+        "created": "1579592197",
+        "creator": "U049MR5LN",
+        "is_archived": false,
+        "is_general": true,
+        "is_private": false,
+        "members": [
+            "U049MR5LN",
+            "U04BIK8CT",
+            "U042YI978"
+        ],
+        "topic": {
+            "value": "",
+            "creator": "",
+            "last_set": "0"
+        },
+        "purpose": {
+            "value": "General topic about TSG CTF",
+            "creator": "U04FNKZFL",
+            "last_set": "1579592251"
+        }
+    },
+    {
+        "id": "C04WMP345",
+        "name": "random",
+        "created": "1579592197",
+        "creator": "U049MR5LN",
+        "is_archived": false,
+        "is_general": false,
+        "is_private": false,
+        "members": [
+            "U049MR5LN",
+            "U04BIK8CT",
+            "U042YI978"
+        ],
+        "topic": {
+            "value": "",
+            "creator": "",
+            "last_set": "0"
+        },
+        "purpose": {
+            "value": "Post random stuffs",
+            "creator": "U04FNKZFL",
+            "last_set": "1579592405"
+        }
+    },
+    {
+        "id": "G04YFRMAW",
+        "name": "flag",
+        "created": "1579592197",
+        "creator": "U049MR5LN",
+        "is_archived": false,
+        "is_general": false,
+        "is_private": true,
+        "members": [
+            "U049MR5LN"
+        ],
+        "topic": {
+            "value": "",
+            "creator": "",
+            "last_set": "0"
+        },
+        "purpose": {
+            "value": "A place to conduct about the content of the flag. Refrain from sharing info posted here externally!",
+            "creator": "U04FNKZFL",
+            "last_set": "1579592912"
+        }
+    }
+]

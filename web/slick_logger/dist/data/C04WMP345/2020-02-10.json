@@ -1,0 +1,68 @@
+[
+    {
+        "type": "message",
+        "text": "@lmt_swallow I was very impressed by the blog post you published yesterday!",
+        "user": "U049MR5LN",
+        "ts": "1581321428.085000"
+    },
+    {
+        "type": "message",
+        "text": "definitely it has brought a new wind in these areas.",
+        "user": "U049MR5LN",
+        "ts": "1581321536.085300"
+    },
+    {
+        "type": "message",
+        "text": "thx",
+        "user": "U042YI978",
+        "ts": "1581321808.085800"
+    },
+    {
+        "type": "message",
+        "text": "The most challenging part was English :)",
+        "user": "U042YI978",
+        "ts": "1581321831.086200"
+    },
+    {
+        "type": "message",
+        "text": "then what is your advice to mitigate them?",
+        "user": "U049MR5LN",
+        "ts": "1581321917.086600"
+    },
+    {
+        "type": "message",
+        "text": "Just use rust or golang?",
+        "user": "U049MR5LN",
+        "ts": "1581321942.087100"
+    },
+    {
+        "type": "message",
+        "text": "yes",
+        "user": "U042YI978",
+        "ts": "1581321964.087400"
+    },
+    {
+        "type": "message",
+        "text": "As I said there, Rust and Go have pretty nice mechanism for that",
+        "user": "U042YI978",
+        "ts": "1581322030.087900"
+    },
+    {
+        "type": "message",
+        "text": "Principally, I recommend using Go.",
+        "user": "U042YI978",
+        "ts": "1581322070.088400"
+    },
+    {
+        "type": "message",
+        "text": "It's much suitable for web development",
+        "user": "U042YI978",
+        "ts": "1581322118.088700"
+    },
+    {
+        "type": "message",
+        "text": "Cool",
+        "user": "U049MR5LN",
+        "ts": "1581322210.089000"
+    }
+]

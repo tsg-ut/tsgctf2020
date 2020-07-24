@@ -1,0 +1,20 @@
+version: '2'
+services:
+  app:
+    restart: always
+    build: .
+    environment:
+      TCPDUMP_ENABLE: 'true'
+      CTF_PORT: 59101
+    volumes:
+      - ./tcpdump/:/var/lib/tcpdump
+      - ./src/supervisord.conf:/etc/supervisord.conf:ro
+  nginx:
+    restart: always
+    image: nginx
+    ports:
+      - 59101:59101
+    volumes:
+      - ./src/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app

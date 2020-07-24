@@ -1,0 +1,12 @@
+version: '2'
+services:
+  mackerel-agent:
+    image: mackerel/mackerel-agent
+    container_name: mackerel-agent
+    hostname: score1
+    environment:
+      - apikey=""
+      - enable_docker_plugin=1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/lib/mackerel-agent/:/var/lib/mackerel-agent/

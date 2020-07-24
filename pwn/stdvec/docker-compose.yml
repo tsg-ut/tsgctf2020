@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+    ctf:
+        build: ./
+        restart: always
+        read_only: true
+        privileged: true
+        volumes:
+            - ./hashcash:/hashcash
+        networks:
+            - internal
+    proxy:
+        restart: always
+        image: nginx
+        ports:
+            - '30003:30003'
+        volumes:
+            - ./build/nginx.conf:/etc/nginx/nginx.conf:ro
+        networks:
+            - default
+            - internal
+        depends_on:
+            - ctf
+
+networks:
+    default:
+    internal:
+        internal: true

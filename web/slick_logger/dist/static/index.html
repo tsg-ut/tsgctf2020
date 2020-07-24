@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize-css/normalize.css">
+		<title>Slick Logger</title>
+		<style>
+			html, body, #app {
+				width: 100%;
+				height: 100%;
+			}
+			#app {
+				display: flex;
+				flex-direction: column;
+			}
+			.search {
+				flex: 0 0 2.5rem;
+				background: #350d36;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.search input {
+				height: 1.5rem;
+				width: 30rem;
+				background: #49254a;
+				border: 1px solid #555;
+				border-radius: 5px;
+				padding: 0 1rem;
+				font-size: 0.8rem;
+				color: #AAA;
+			}
+			.workspace {
+				flex: 1 1 0;
+				height: 0;
+				display: flex;
+			}
+			.channels {
+				flex: 0 0 200px;
+				background: #3F0E40;
+				color: #bcabbc;
+				padding: 0.5rem 0;
+			}
+			.channel {
+				height: 2.5rem;
+				line-height: 2.5rem;
+				padding: 0 1rem;
+				cursor: pointer;
+			}
+			.channel.active {
+				background: #1164a3;
+				color: #FFFFFF;
+			}
+			.channel i {
+				width: 1rem;
+			}
+			.error {
+				display: flex;
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+			}
+			.history {
+				flex: 1 1 0;
+				overflow-y: auto;
+				padding: 1rem;
+				color: #444;
+			}
+			.message {
+				display: flex;
+				margin: 0.5rem 0;
+			}
+			.message em {
+				background: rgba(242, 199, 68, 0.4);
+				font-style: normal;
+			}
+			.icon {
+				margin-right: 0.5rem;
+			}
+			.icon img {
+				width: 48px;
+				height: 48px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="search">
+				<form @submit.prevent="onSubmit">
+					<input v-model="search" type="text" placeholder="Search in this channel">
+				</form>
+			</div>
+			<div class="workspace">
+				<div class="channels">
+					<div v-for="channel in channels" class="channel" :class="{active: channelId === channel.id}" @click="onClickChannel(channel.id)">
+						<i class="fas" :class="{'fa-hashtag': !channel.is_private, 'fa-lock': channel.is_private}"></i>
+						{{channel.name}}
+					</div>
+				</div>
+				<div class="history">
+					<div v-if="error" class="error">
+						{{error}}
+					</div>
+					<div v-else v-for="message in history" class="message">
+						<div class="icon">
+							<img :src="message.icon">
+						</div>
+						<div class="body">
+							<div class="head">
+								<strong>{{message.username}}</strong>
+								{{toDate(message.ts)}}
+							</div>
+							<div class="text" v-html="message.text"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			const formatter = new Intl.DateTimeFormat(undefined, {dateStyle: 'medium', timeStyle: 'medium'});
+
+			new Vue({
+				el: '#app',
+				data: () => ({
+					channelId: '',
+					search: '',
+					error: '',
+					channels: [],
+					history: [],
+				}),
+				computed: {
+					general() {
+						return this.channels.find(({name}) => name === 'general');
+					},
+				},
+				watch: {
+					channelId() {
+						this.updateHistory();
+					},
+				},
+				async mounted() {
+					await this.updateChannels();
+					this.channelId = this.general.id;
+				},
+				methods: {
+					async updateChannels() {
+						const res = await axios('/api/channels');
+						this.channels = res.data;
+					},
+					async updateHistory() {
+						const res = await axios('/api/history', {
+							params: {
+								channel: JSON.stringify(this.channelId),
+							},
+							validateStatus: null,
+						});
+						if (res.status === 200) {
+							this.history = res.data;
+							this.error = '';
+						} else {
+							this.error = res.data;
+						}
+					},
+					async onSubmit() {
+						const res = await axios('/api/search', {
+							params: {
+								channel: JSON.stringify(this.channelId),
+								q: JSON.stringify(this.search),
+							},
+							validateStatus: null,
+						});
+						if (res.status === 200) {
+							this.history = res.data;
+							this.error = '';
+						} else {
+							this.error = res.data;
+						}
+					},
+					onClickChannel(channelId) {
+						this.search = '';
+						this.channelId = channelId;
+					},
+					toDate(ts) {
+						return formatter.format(new Date(parseFloat(ts) * 1000));
+					},
+				},
+			});
+		</script>
+	</body>
+</html>

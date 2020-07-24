@@ -1,0 +1,10 @@
+# Beginner's Misc Writeup
+
+## Solution
+
+* En: [writeup.en.md](writeup.en.md)
+* Ja: [writeup.ja.md](writeup.ja.md)
+
+## Flag
+
+`TSGCTF{Y0u_t00k_the_first_step_0f_the_misc_w0rld!_G0_and_s0lve_all_the_remaining_challenges}`

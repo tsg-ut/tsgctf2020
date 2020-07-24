@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    build: .
+    ports:
+      - 49670:49670
+    volumes:
+      - ./httpd.conf:/usr/local/apache2/conf.d/httpd.conf:ro
+      - ./logs/:/var/log/apache2
+      - ./data/:/var/lib/data:ro
+      - ./static/:/usr/local/apache2/htdocs:ro

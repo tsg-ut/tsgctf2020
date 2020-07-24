@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="data:,">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="/app.css">
+
+        <style>[v-cloak]>*{display: none} [v-cloak]::before{content:"loading..."}</style>
+    </head>
+
+    <body>
+        <div id="app" v-cloak>
+            <div class="container">
+                <div v-if="headerImg" class="hero"> <img :src="headerImg" /> </div>
+
+                <section class="section">
+                    <div v-if="loggedin">
+                        <div class="buttons is-right">
+                            <button v-on:click="logout" class="button">Exit Note Space</button>
+                            <a href="/report.html" class="button">Report URL</a>
+                        </div>
+
+                        <div class="control">
+                            <div class="control has-icons-right">
+                                <input v-model="search" placeholder="Search..." type="text" class="input is-rounded" />
+                                <span class="icon is-small is-right"><i class="fas fa-search"></i></span>
+                            </div>
+                        </div>
+
+                        <section class="section">
+                        <div class="is-centered">
+                            <div class="control note is-centered">
+                                <textarea v-model="editingNote" placeholder="note..." class="textarea note-color box"></textarea>
+                                <button v-on:click="postNote" class="button is-fullwidth">Post</button>
+                            </div>
+                        </div>
+                        </section>
+
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <div v-for="note in visibleNotes" class="note note-color box" style="flex: 1">
+                                {{ note.content }}
+                                <div class="x-icon" :noteid="note.id" v-on:click="deleteNote"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div v-else>
+                        <button v-on:click="register" class="button">New Note Space</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="/app.js"></script>
+    </body>
+</html>

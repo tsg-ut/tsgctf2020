@@ -1,0 +1,3 @@
+main() {
+	write("Hello," + "World!");
+}

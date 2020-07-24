@@ -1,0 +1,68 @@
+[
+    {
+        "id": "U049MR5LN",
+        "team_id": "T04MPT70J",
+        "name": "hakatashi",
+        "deleted": false,
+        "color": "4bbe2e",
+        "real_name": "Koki Takahashi",
+        "tz": "Asia\/Tokyo",
+        "tz_label": "Japan Standard Time",
+        "tz_offset": 32400,
+        "profile": {
+            "image_48": "/icons/hakatashi.png"
+        },
+        "is_admin": true,
+        "is_owner": true,
+        "is_primary_owner": true,
+        "is_restricted": false,
+        "is_ultra_restricted": false,
+        "is_bot": false,
+        "is_app_user": false,
+        "updated": 1536908827
+    },
+    {
+        "id": "U04BIK8CT",
+        "team_id": "T04MPT70J",
+        "name": "kcz146",
+        "deleted": false,
+        "color": "e7392d",
+        "real_name": "146 Cookies",
+        "tz": "Asia\/Tokyo",
+        "tz_label": "Japan Standard Time",
+        "tz_offset": 32400,
+        "profile": {
+            "image_48": "/icons/kcz146.png"
+        },
+        "is_admin": false,
+        "is_owner": false,
+        "is_primary_owner": false,
+        "is_restricted": false,
+        "is_ultra_restricted": false,
+        "is_bot": false,
+        "is_app_user": false,
+        "updated": 1536908827
+    },
+    {
+        "id": "U042YI978",
+        "team_id": "T04G7TL4M",
+        "name": "lmt_swallow",
+        "deleted": false,
+        "color": "e96699",
+        "real_name": "Takashi Yoneuchi",
+        "tz": "Asia\/Tokyo",
+        "tz_label": "Japan Standard Time",
+        "tz_offset": 32400,
+        "profile": {
+            "image_48": "/icons/lmt_swallow.png"
+        },
+        "is_admin": false,
+        "is_owner": false,
+        "is_primary_owner": false,
+        "is_restricted": false,
+        "is_ultra_restricted": false,
+        "is_bot": false,
+        "is_app_user": false,
+        "updated": 1536908827
+    }
+]

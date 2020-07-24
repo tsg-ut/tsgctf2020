@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  app:
+    build: ./src/app
+    volumes:
+      - ./src/app/data:/app/data # SQLite
+    restart: always
+    env_file: .env
+
+  nginx:
+    build: ./src/nginx
+    depends_on:
+      - app
+      - publisher
+    ports:
+      - '18364:80'
+    volumes:
+      - ./src/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./src/nginx/supervisord.conf:/etc/supervisord.conf:ro
+      - ./src/html:/var/www/html
+      - ./tcpdump/:/var/lib/tcpdump
+    restart: always
+    environment:
+      TCPDUMP_ENABLE: 'true'
+      CTF_PORT: 80
+
+  redis:
+    image: redis:4.0.8
+    restart: always
+
+  worker:
+    build: ./src/worker
+    depends_on:
+      - redis
+    restart: always
+    env_file: .env
+
+  publisher:
+    build: ./src/publisher
+    depends_on:
+      - redis
+    restart: always
+    env_file: .env

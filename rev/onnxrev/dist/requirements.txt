@@ -1,0 +1,6 @@
+# I believe the version of the libraries won't matter to solve this problem, 
+# but I write down the version of the libraries, just in case.
+
+Pillow      == 6.2.1
+numpy       == 1.19.0
+onnxruntime == 1.3.0

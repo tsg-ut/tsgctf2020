@@ -1,0 +1,52 @@
+diff -uprN note/docker-compose.yml note2/docker-compose.yml
+--- note/docker-compose.yml	2020-07-11 13:36:57.979657632 +0900
++++ note2/docker-compose.yml	2020-07-11 23:23:26.422286032 +0900
+@@ -14,7 +14,7 @@ services:
+       - app
+       - publisher
+     ports:
+-      - '18364:80'
++      - '18365:80'
+     volumes:
+       - ./src/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+       - ./src/nginx/supervisord.conf:/etc/supervisord.conf:ro
+diff -uprN note/_env note2/_env
+--- note/_env	2020-07-15 22:35:14.125584018 +0900
++++ note2/_env	2020-07-15 22:35:00.808966627 +0900
+@@ -1,4 +1,4 @@
+-FLAG_CONTENT=TSGCTF{5H4LL_W3_ENCRYP7}
++FLAG_CONTENT=TSGCTF{5JFJMWOPOPW5E729}
+ FLAG_USER_ID=94b4652d212cb2e3fee49cafccaa11bd
+ COOKIE_VALUE=BAh7B0kiD3Nlc3Npb25faWQGOgZFVG86HVJhY2s6OlNlc3Npb246OlNlc3Npb25JZAY6D0BwdWJsaWNfaWRJIkVlZjc4OGY2ODE3YTY5MmUyYjk2NWQ3OWQxZmU1NTQyNGRjNjgwOTk2MjViMjU0Mzc2YzlkN2E0ZGM5OGRlMWZmBjsARkkiCXVzZXIGOwBGSSIlOTRiNDY1MmQyMTJjYjJlM2ZlZTQ5Y2FmY2NhYTExYmQGOwBG--88dc32dfe99e0841ad96bae781c5d18d4e04902f
+ SECRET=16e32fd2a0eb4ac40347a65894a3f18e
+diff -uprN note/src/html/app.js note2/src/html/app.js
+--- note/src/html/app.js	2020-07-10 22:46:03.969905789 +0900
++++ note2/src/html/app.js	2020-07-12 14:30:53.123840763 +0900
+@@ -57,7 +57,7 @@ const app = new Vue({
+         },
+         async updateVisibleNotes() {
+             try {
+-                const re = new RegExp(this.search);
++                const re = new RegExp(this.search.replace(/[{}()+*]/g, ''));
+                 this.visibleNotes = this.allNotes.filter(({content}) => content.match(re));
+             } catch {
+                 // pass
+diff -uprN note/src/publisher/publisher.js note2/src/publisher/publisher.js
+--- note/src/publisher/publisher.js	2020-07-15 22:30:50.313392561 +0900
++++ note2/src/publisher/publisher.js	2020-07-11 23:48:43.734800739 +0900
+@@ -53,13 +53,13 @@ const report = async () => {
+             json: [
+                 {
+                     hostId: mackerelHostID,
+-                    name: 'ctfchal.note.queued-count',
++                    name: 'ctfchal.note2.queued-count',
+                     time: 0|(Date.now() / 1000),
+                     value: 0|queued_count,
+                 },
+                 {
+                     hostId: mackerelHostID,
+-                    name: 'ctfchal.note.proceeded-count',
++                    name: 'ctfchal.note2.proceeded-count',
+                     time: 0|(Date.now() / 1000),
+                     value: 0|proceeded_count,
+                 },

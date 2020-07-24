@@ -1,0 +1,12 @@
+version: '2'
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - 30718:30718
+    environment:
+      TCPDUMP_ENABLE: 'true'
+      CTF_PORT: 30718
+    volumes:
+      - ./tcpdump/:/var/lib/tcpdump

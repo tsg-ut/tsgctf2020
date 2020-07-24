@@ -1,0 +1,16 @@
+version: '2'
+services:
+  app:
+    build: .
+    ports:
+      - 49670:49670
+    restart: always
+    environment:
+      TCPDUMP_ENABLE: 'true'
+      CTF_PORT: 49670
+    volumes:
+      - ./dist/httpd.conf:/usr/local/apache2/conf.d/httpd.conf:ro
+      - ./dist/static/:/usr/local/apache2/htdocs:ro
+      - ./logs/:/var/log/apache2
+      - ./tcpdump/:/var/lib/tcpdump
+      - ./src/supervisord.conf:/etc/supervisord.conf:ro

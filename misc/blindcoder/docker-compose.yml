@@ -1,0 +1,13 @@
+version: '2'
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - 65532:65532
+    environment:
+      TCPDUMP_ENABLE: 'true'
+      FLAG: TSGCTF{ichi_zero_zero_zero_zero_zero_zero..._Counting!!}
+      CTF_PORT: 65532
+    volumes:
+      - ./tcpdump/:/var/lib/tcpdump
