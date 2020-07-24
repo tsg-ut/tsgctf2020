@@ -22,7 +22,7 @@ RE2 has default limitation of repetition `{n}` with `n <= 1000`, but since Go's 
 
 So, as we observed the execution time of CGI is limited to 1 second in httpd.conf, we can adjust repetition count of `(.?){1000}` so that we tell if a regular expression matches a particular pattern by the HTTP status code returned, 200 or 504.
 
-Then, we can apply a normal Blind Regex Injection method here and get flag. Our expected solver is placed in [solver/solve.js](solver.solve.js).
+Then, we can apply a normal Blind Regex Injection method here and get flag. Our expected solver is placed in [solver/solve.js](solver/solve.js).
 
 Translated with www.DeepL.com/Translator (free version)
 
