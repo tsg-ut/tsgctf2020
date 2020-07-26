@@ -95,7 +95,7 @@ Also take a look at [CTFTime](https://ctftime.org/event/1004/tasks/) :)
   * Note, Note2
 * [TSG CTF 2020 writeup by NaruseJun - HackMD](https://hackmd.io/@sekai/HyglTEPyw)
   * Reverse-ing
-* [TSG CTF 2020 onnxrev write-up - GitHub Gist](https://gist.github.com/5unKn0wn/333290e702cdaf2cf12cb9313c4d73a7
+* [TSG CTF 2020 onnxrev write-up - GitHub Gist](https://gist.github.com/5unKn0wn/333290e702cdaf2cf12cb9313c4d73a7)
   * ONNXrev
 * [CTF-writeups/TSG CTF 2020 at master · S3v3ru5/CTF-writeups](https://github.com/S3v3ru5/CTF-writeups/tree/master/TSG%20CTF%202020)
   * Beginner's Crypto, Modulus Amittendus
