@@ -87,12 +87,16 @@ Also take a look at [CTFTime](https://ctftime.org/event/1004/tasks/) :)
   * std::vector
 * [CTFWriteups/2020/TSG CTF at 2020 · shift-crops/CTFWriteups](https://github.com/shift-crops/CTFWriteups/tree/2020/2020/TSG%20CTF)
   * Beginner's Pwn, Detective, RACHELL, Violence Fixer
+* [tsg-ctf-2020-slick-logger.py - GitHub Gist](https://gist.github.com/UltramanGaia/597d44aee03dd0bf724f223855e59903)
+  * Slick Logger
 * [tsgctf-note1 - GitHub Gist](https://gist.github.com/po6ix/f3c013d974c6003a8dbc573c887602ae)
   * Note
 * [TSGCTF Note (both 1 and 2) - GitHub Gist](https://gist.github.com/icchy/017ae9bd964a954b92efb277bc736d2b)
   * Note, Note2
 * [TSG CTF 2020 writeup by NaruseJun - HackMD](https://hackmd.io/@sekai/HyglTEPyw)
   * Reverse-ing
+* [TSG CTF 2020 onnxrev write-up - GitHub Gist](https://gist.github.com/5unKn0wn/333290e702cdaf2cf12cb9313c4d73a7
+  * ONNXrev
 * [CTF-writeups/TSG CTF 2020 at master · S3v3ru5/CTF-writeups](https://github.com/S3v3ru5/CTF-writeups/tree/master/TSG%20CTF%202020)
   * Beginner's Crypto, Modulus Amittendus
 * [CTFium/TSGCTF/2020 at master · sajjadium/CTFium](https://github.com/sajjadium/CTFium/tree/master/TSGCTF/2020)
