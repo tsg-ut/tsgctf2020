@@ -143,4 +143,5 @@ Also take a look at [CTFTime](https://ctftime.org/event/1004/tasks/) :)
 ## Related blogposts
 
 * [TSG CTF 2020 作問感想 - 博多電光](https://hakatashi.hatenadiary.com/entry/tsg-ctf-2020-sketchy) (Japanese)
+* [TSG CTF 2020 開催記 - 博多電光](https://hakatashi.hatenadiary.com/entry/2020/12/01/000825) (Japanese)
 * [【pwn 31.0】 TSGCTF 2020 作問反省 - newbieからバイナリアンへ](https://smallkirby.hatenablog.com/entry/2020/07/13/142043) (Japanese)
