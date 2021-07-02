@@ -14,7 +14,7 @@
 [Karte](pwn/karte)|Pwn|easy|@smallkirby_|6
 [std::vector](pwn/stdvec)|Pwn|med-hard|@moratorium08|5
 [Beginner's Web](web/beginners_web)|Web|beginner|@hakatashi|31
-[Note](web/note)|Web|hard|@cookie-s|7 (Part1), 3 (Part2)
+[Note](web/note)|Web|hard|@kcz146|7 (Part1), 3 (Part2)
 [Slick Logger](web/slick_logger)|Web|medium|@hakatashi|5
 [Beginner's Crypto](crypto/beginners_crypto)|Crypto|beginner|@hakatashi|86
 [Sweet like Apple Pie](crypto/sweet_like_apple_pie)|Crypto|medium|@hakatashi|24
